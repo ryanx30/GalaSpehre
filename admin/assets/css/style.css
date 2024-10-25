@@ -1,0 +1,454 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar h1 {
+    color: #000;
+    font-size: 28px;
+}
+
+.navbar nav a {
+    text-align: right;
+    margin: 0 10px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar nav a.button:hover {
+    background-color: #ececec;
+}
+
+main {
+    margin-top: 100px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('../images/images.jpeg') center/cover no-repeat;
+    border-radius: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    color: white;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.intro {
+    max-width: 500px;
+}
+
+.intro h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.ticket-button {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-button:hover {
+    background-color: #555;
+}
+
+/* Event container */
+.event-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+:root {
+    --primary-color: #007BFF;  /* Primary button color */
+    --hover-color: #0056b3;     /* Button hover color */
+    --background-color: rgba(255, 255, 255, 0.1); /* Background color for event cards */
+    --text-color: #fff;         /* Text color */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Shadow color */
+}
+
+.event-card {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for shadow */
+    box-shadow: 0 4px 10px var(--shadow-color); /* Add shadow */
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.event-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.event-details {
+    display: flex;
+    align-items: center;
+}
+
+.event-image {
+    max-width: 760px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.event-details img {
+    width: 80px;     
+    height: 80px;         
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Consistent padding */
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.event-price {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.register-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.register-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-card {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .event-details {
+        flex-direction: column; /* Stack image and details */
+        align-items: flex-start; /* Align to start */
+    }
+
+    .event-image {
+        max-width: 100%; /* Make sure the image is responsive */
+    }
+
+    .event-details img {
+        width: 60px; /* Smaller icon size */
+        height: 60px; 
+    }
+
+    .event-title {
+        font-size: 20px; /* Smaller title on mobile */
+    }
+
+    .event-price {
+        font-size: 18px; /* Smaller price on mobile */
+    }
+}
+
+
+.toggle-switch {
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+    max-width: none; 
+    display: flex;
+    flex-direction: column;
+}
+.info-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 10px 0;
+}
+
+.info-tabs .tab {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-tabs .tab i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.info-tabs .tab:hover {
+    color: hsl(211, 100%, 50%);
+}
+
+.info-content {
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-box {
+    flex: 1; 
+    min-width: 180px;
+    max-width: 250px; 
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-box span {
+    font-size: 12px;
+    color: #777;
+}
+
+.info-box strong {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #000000;
+}
+
+.search-button i {
+    font-size: 16px;
+}
+
+.titlepage h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6e6e6e;
+}
+
+/* Error message styling */
+.error {
+    color: #ff0000;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Input fields styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Button styling */
+form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Link to login page */
+form p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+form p a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+}
+
+.status-circle {
+    width: 20px;  /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px; /* Spacing above the circle */
+}
+
+.info-box strong {
+    transition: all 0.5s ease-in-out;
+}

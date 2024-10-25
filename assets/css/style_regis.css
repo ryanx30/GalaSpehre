@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:url('./banner_bg.jpg') center/cover no-repeat;
+}
+
+.register-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%) scale(1);
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.register-container:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Zoom effect on hover */
+}
+
+.register-container h2 {
+    margin: 0 0 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+
+.register-container .form-group {
+    position: relative;
+}
+
+.register-container .form-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+
+.register-container .form-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+    outline: none;
+    background: transparent !important;
+}
+
+.register-container .form-group input:focus ~ label,
+.register-container .form-group input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 0;
+    color: #cacaca;
+    font-size: 12px;
+}
+
+.submit-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #2a2a2a;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #2d2d2d, 0 0 25px #2d2d2d, 0 0 50px #2d2d2d, 0 0 100px #2d2d2d;
+}
+
+.submit-btn span {
+    position: absolute;
+    display: block;
+}
+
+.submit-btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2d2d2d);
+    animation: animate-one 1s linear infinite;
+}
+
+@keyframes animate-one {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.submit-btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2d2d2d);
+    animation: animate-two 1s linear infinite;
+    animation-delay: .25s;
+}
+
+@keyframes animate-two {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+.submit-btn span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2d2d2d);
+    animation: animate-three 1s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes animate-three {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+.submit-btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2d2d2d);
+    animation: animate-four 1s linear infinite;
+    animation-delay: .75s;
+}
+
+@keyframes animate-four {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
